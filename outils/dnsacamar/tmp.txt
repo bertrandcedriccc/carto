@@ -1,0 +1,246 @@
+sip.chu-lyon.fr
+webconf.chu-lyon.fr
+autodiscover.chu-lyon.fr
+extranet.chu-lyon.fr
+imap.chu-lyon.fr
+legacy.chu-lyon.fr
+smtp.chu-lyon.fr
+smtp-hcl.chu-lyon.fr
+biologie.chu-lyon.fr
+biologienlb.chu-lyon.fr
+biologietrt.chu-lyon.fr
+easily.chu-lyon.fr
+easilynlb.chu-lyon.fr
+easilytrt-prod.chu-lyon.fr
+easily-demo.chu-lyon.fr
+easilynlb-demo.chu-lyon.fr
+easilytrt-demo.chu-lyon.fr
+easily-lecture.chu-lyon.fr
+easilynlb-lecture.chu-lyon.fr
+easilytrt-lecture.chu-lyon.fr
+easily-for.chu-lyon.fr
+easilynlb-for.chu-lyon.fr
+easilytrt-for.chu-lyon.fr
+easily-devnext.chu-lyon.fr
+easilynlb-devnext.chu-lyon.fr
+easilytrt-devnext.chu-lyon.fr
+easily-intnext.chu-lyon.fr
+easilynlb-intnext.chu-lyon.fr
+easilytrt-intnext.chu-lyon.fr
+accueil-h2h.chu-lyon.fr
+accueil-hcl.chu-lyon.fr
+av.chu-lyon.fr
+dialin.chu-lyon.fr
+meet.chu-lyon.fr
+web-sip.chu-lyon.fr
+lyncdiscover.chu-lyon.fr
+myhcl.chu-lyon.fr
+portail-hcl.chu-lyon.fr
+vpndoc-hcl.chu-lyon.fr
+www2.chu-lyon.fr
+cclin-sudest-apps.chu-lyon.fr
+sigaps-lyon.chu-lyon.fr
+www.chu-lyon.fr
+biobook.chu-lyon.fr
+services-patient.chu-lyon.fr
+nosobase.chu-lyon.fr
+error check your search parameter
+chu-lyon.fr
+cclin-sudest.chu-lyon.fr
+f5pwslync.chu-lyon.fr
+www.colibris.chu-lyon.fr
+f5apm-plh.chu-lyon.fr
+ftp-hcl.chu-lyon.fr
+pacs.chu-lyon.fr
+f5pwsextra.chu-lyon.fr
+elisa.chu-lyon.fr
+mail3.chu-lyon.fr
+hcl530-013.chu-lyon.fr
+ip194.chu-lyon.fr
+colibris.chu-lyon.fr
+documentationcentrale.chu-lyon.fr
+di571sw-4.chu-lyon.fr
+di109200bn-ext.chu-lyon.fr
+di193sw.chu-lyon.fr
+di53258bn-ext.chu-lyon.fr
+application-rearezo.chu-lyon.fr
+portail-ext.chu-lyon.fr
+di571sw-2.chu-lyon.fr
+cpias-ara-apps.chu-lyon.fr
+di09bn.chu-lyon.fr
+tmgnlblync.chu-lyon.fr
+fournisseurs.chu-lyon.fr
+vs-vpndoc-ext.chu-lyon.fr
+self.chu-lyon.fr
+enadis.chu-lyon.fr
+di51sw.chu-lyon.fr
+ip195.chu-lyon.fr
+di52sw.chu-lyon.fr
+f5apm-sisra.chu-lyon.fr
+mediatheque.chu-lyon.fr
+f5apm-biobook-vs.chu-lyon.fr
+di123su.chu-lyon.fr
+di34sw.chu-lyon.fr
+di4027sw.chu-lyon.fr
+hds.chu-lyon.fr
+di01su.chu-lyon.fr
+mail2.chu-lyon.fr
+enquetes.chu-lyon.fr
+rbh.chu-lyon.fr
+di2010sw.chu-lyon.fr
+hcl530-005.chu-lyon.fr
+f5apm-reverse-proxy.chu-lyon.fr
+acces-hcl.chu-lyon.fr
+portail-invite.chu-lyon.fr
+recorda.chu-lyon.fr
+carl-web-rec.chu-lyon.fr
+lyncweb-ext.chu-lyon.fr
+f5apm-portail-test.chu-lyon.fr
+proxy-apm.chu-lyon.fr
+tmgnlbtest.chu-lyon.fr
+kiosquesanteva-n.chu-lyon.fr
+mail1.chu-lyon.fr
+di67sw.chu-lyon.fr
+tmgnlbextra.chu-lyon.fr
+di3003su.chu-lyon.fr
+rearezo.chu-lyon.fr
+di554sw.chu-lyon.fr
+f5pwsautres.chu-lyon.fr
+di265su.chu-lyon.fr
+f5apm-pacs-vs.chu-lyon.fr
+di2004sw.chu-lyon.fr
+di86301bn-1.chu-lyon.fr
+hclmsg.chu-lyon.fr
+fs.chu-lyon.fr
+di74050bn-plh-ext.chu-lyon.fr
+di264su.chu-lyon.fr
+di2005sw.chu-lyon.fr
+myhclpro.chu-lyon.fr
+dns-serv.chu-lyon.fr
+mailhost.chu-lyon.fr
+di2008sw.chu-lyon.fr
+di5032sw.chu-lyon.fr
+di509sw.chu-lyon.fr
+di81725bn-ext.chu-lyon.fr
+di74sw.chu-lyon.fr
+di115sw.chu-lyon.fr
+di38650bn-ext.chu-lyon.fr
+di39sw.chu-lyon.fr
+tmgnlb.chu-lyon.fr
+di176sw.chu-lyon.fr
+di17su.chu-lyon.fr
+di153sw.chu-lyon.fr
+di221sw.chu-lyon.fr
+di74050bn-ext.chu-lyon.fr
+di504sw.chu-lyon.fr
+di2016sw.chu-lyon.fr
+di538sw.chu-lyon.fr
+di562sw.chu-lyon.fr
+di1306sw.chu-lyon.fr
+di5021sw.chu-lyon.fr
+di143su.chu-lyon.fr
+di2004sw-mss.chu-lyon.fr
+di2005sw-mss.chu-lyon.fr
+di571sw-3.chu-lyon.fr
+di2001sw.chu-lyon.fr
+di140sw.chu-lyon.fr
+di2006sw.chu-lyon.fr
+di161sw.chu-lyon.fr
+di386sw.chu-lyon.fr
+di505sw.chu-lyon.fr
+ip193.chu-lyon.fr
+di83sw.chu-lyon.fr
+ip241-vpn.chu-lyon.fr
+di20171bn-ext.chu-lyon.fr
+di121sw.chu-lyon.fr
+di136sw.chu-lyon.fr
+di17sw.chu-lyon.fr
+di92su.chu-lyon.fr
+dns-serv2.chu-lyon.fr
+di13sw.chu-lyon.fr
+pi70sw.chu-lyon.fr
+prodhybase.chu-lyon.fr
+cpg.chu-lyon.fr
+portail-old.chu-lyon.fr
+guide-consultations.chu-lyon.fr
+calypsonet.chu-lyon.fr
+mitrafr.chu-lyon.fr
+portaildoc.chu-lyon.fr
+[~] Acamar.py v.0.1 written by @SI9INT | Target set to: chu-lyon.fr
+[!] Enumerating yahoo.com
+[!] Enumerating ask.com
+[!] Enumerating bing.com
+[!] Enumerating dnsdumpster.com
+	 - requesting valid session
+[!] Enumerating findsubdomains.com
+[!] Enumerating threadcrowd.com
+[!] Enumerating threatminer.org
+[!] Enumerating virustotal.com
+[!] Enumerating securitytrails.com
+[!] Enumerating hackertarget.com
+[-] Enumerating crt.sh
+[!] Enumerating certspotter.com
+[!] Enumerating riddler.io
+[!] Enumerating ptrarchive.com
+	 - hooking up page via fake-cookie "pa_id: 1337"
+	 - proceeding HTML for filtering out the result
+	 - proceeding page: 1
+	 - proceeding JSON output
+	 - proceeding JSON output
+	 - proceeding HTML for filtering out the result
+	 - proceeding JSON output
+	 - proceeding page: 1
+	 - proceeding HTML for filtering out the result
+	 - proceeding JSON output
+	 - proceeding HTML for filtering out the result
+	 - proceeding page: 1
+	 - got valid session: E0LYFu04QvDP93zN0mNWFdXaMlEVfwPZ, proceeding output
+	 - proceeding page: 2
+	 - proceeding page: 3
+	 proceeding result set: 1
+	 - proceeding page: 2
+	 - proceeding page: 4
+	 - proceeding page: 5
+	 - proceeding page: 3
+	 - proceeding HTML for filtering out the result
+	 - proceeding page: 6
+	 - proceeding page: 4
+	 - proceeding page: 7
+	 - proceeding page: 2
+	 - proceeding page: 8
+	 - proceeding page: 5
+	 - proceeding page: 9
+	 - proceeding page: 10
+	 - proceeding page: 6
+	 - proceeding page: 11
+	 - proceeding page: 3
+	 - proceeding page: 12
+	 - proceeding page: 7
+	 - proceeding page: 13
+	 - proceeding page: 14
+	 - proceeding page: 8
+	 - proceeding page: 15
+	 - proceeding page: 16
+	 - proceeding page: 4
+	 - proceeding page: 17
+	 - proceeding page: 9
+	 - proceeding page: 18
+	 - proceeding page: 10
+	 - proceeding page: 19
+	 - proceeding page: 20
+	 - proceeding page: 5
+	 - reloading page (due custom query-selectors)
+	 - proceeding page: 1
+	 - proceeding page: 2
+	 - proceeding page: 3
+	 - proceeding page: 4
+	 - proceeding page: 5
+	 - reloading page (due custom query-selectors)
+	 - proceeding page: 1
+	 - proceeding page: 2
+	 - proceeding page: 3
+	 - proceeding page: 4
+	 - proceeding page: 5
+	 - reloading page (due custom query-selectors)
+[!] Finished, printing result:
+[!] Counting 168 unique subdomains
