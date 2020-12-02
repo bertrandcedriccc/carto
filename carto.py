@@ -1,8 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #Utilisation fuzzing
-import sys
+import sys,re,os
 sys.path.append("fonctions")
+sys.path.append("fonctions/config")
+sys.path.append("fonctions/audit")
+sys.path.append("fonctions/audit/carto")
 import functions_scan_projet
 import functions_nmap
 import functions_conf
@@ -14,13 +17,16 @@ functions_conf.verif_vulneers()
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-d", "--domaine", help="Domaine a analyser.", nargs='*')
-parser.add_argument("--file_domaines", "--file_domaines", help="Fichiers contenant les domaines a analyser.", nargs='*')
+parser.add_argument("--fichier_domaine", "--fichier_domaine", help="Fichiers contenant les domaines a analyser.", nargs='*')
 parser.add_argument("--enum", "--enum", help="Enumerer les domaines", nargs='*')
-parser.add_argument("--carto", "--carto", help="Cartographie des domaines", nargs='*')
+parser.add_argument("--nmap", "--nmap", help="Cartographie des domaines", nargs='*')
 parser.add_argument("--scan_file_projet", "--scan_file_projet", help="Scan de fichier de projet via fichier texte", nargs='*')
 
 args = parser.parse_args()
 
+
+fichier_domaine = ""
+file_projet = ""
 
 if args.scan_file_projet:
 	file_projet=' '.join(args.scan_file_projet)
@@ -43,31 +49,16 @@ else:
 	exit()
 
 
-if args.file_domaines:
-	file_domaines=' '.join(args.file_domaines)
-	if file_domaines == "":
+if args.fichier_domaine is not None:
+	fichier_domaine=' '.join(args.fichier_domaine)
+	if fichier_domaine == "":
 		print("entrez le fichier des domaines à scanner (fichier txt)")
 	else:
-		print("scan de projets contenus dans le fichier "+file_domaines)
-		functions_scan_projet.scan_projets(file_projet)
+		print("scan de domaines contenus dans le fichier "+fichier_domaine)
 
 
-if args.import_projet:
-	print("importation d'un projet")
-	file_xml=' '.join(args.import_projet)
-	if file_xml == "":
-		print("entrez le chemin du projet à importer (fichier xml)")
-	else:
-		functions_projet.import_projet(file_xml)
-
-
-if args.scan_projet is not None:
-	print("scan automatise des projets selon la date de planification de l'audit")
-	functions_projet.scan_projet()
-	exit()
-
-if args.supprssdomain is not None:
-	dom_suppr = ' '.join(args.supprssdomain)
-	print("Suppression des donnees associees au domaine " + str(dom_suppr))
-	functions_nettoyage.nettoie_sous_domaine("",dom_suppr)
-	exit()
+if args.nmap or args.nmap is not None :
+	print("cartographie des domaines du projet" + domaine)
+	if fichier_domaine != "":
+		print ("scan des domaines du fichier " + fichier_domaine)
+		functions_scan_projet.scan_domaines(domaine,fichier_domaine)

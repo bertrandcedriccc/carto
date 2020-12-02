@@ -106,14 +106,14 @@ class Audit(Thread):
 
     def nmap(self):
         cmd_nmap = self.cmd_nmap.replace("<ip>", self.ip)
-        cmd_nmap = cmd_nmap + " #" + self.domaineaudit + "_nmapriskandme" + str(randomid)
+        cmd_nmap = cmd_nmap + " #" + self.domaineaudit + "_nmapcarto" + str(randomid)
         cmd_nmap = cmd_nmap.replace("<file_report>", self.output_dir + self.ip + "_nmap.xml")
         print(cmd_nmap)
         if os.path.exists(self.output_dir + "/" + self.ip + "_nmap.xml"):
             os.remove(self.output_dir + self.ip + "_nmap.xml")
         if verbose:
             print(
-                cdeb + "31m  > " + self.ip + cfin + " \t" + cmd_nmap.split("#" + self.domaineaudit + "_nmapriskandme")[
+                cdeb + "31m  > " + self.ip + cfin + " \t" + cmd_nmap.split("#" + self.domaineaudit + "_nmapcarto")[
                     0])
 
         child = pexpect.spawn(cmd_nmap)
@@ -198,7 +198,7 @@ def exec_nmap_parallel(dir_output, input_file, cmd_nmap, domaine):
             os.wait()
         except KeyboardInterrupt:
             try:
-                cmd = "ps ax | grep '#" + domaine + "_nmapriskandme' | awk {'print $1'}"
+                cmd = "ps ax | grep '#" + domaine + "_nmapcarto' | awk {'print $1'}"
                 ids = os.popen(cmd)
                 pids = ids.readlines()
                 os.kill(child, signal.SIGKILL)
@@ -257,7 +257,7 @@ def check_if_scan_nmap(domaine):
     """
     nmap_scan = 0
     while nmap_scan == 0:
-        cmd = "ps ax | grep '#" + domaine + "_nmapriskandme' | awk {'print $1'}"
+        cmd = "ps ax | grep '#" + domaine + "_nmapcarto' | awk {'print $1'}"
         ids = os.popen(cmd)
         pids = ids.readlines()
         nb_pid = 0

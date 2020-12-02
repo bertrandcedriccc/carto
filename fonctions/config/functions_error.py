@@ -49,6 +49,6 @@ def log_msg(msg):
 
 def log_error(msg,domain):
     file_error = "erreurs.txt"
-    print file_error
+    print (file_error)
     functions_fichiers.ajouter_fichier(file_error,msg)
     functions_system.print_and_flush(functions_system.RED + "Erreur enregistree " +msg + " dans " + file_error+ functions_system.NORMAL)
