@@ -34,6 +34,7 @@ def generate_carto(domaine, dir_rapport):
         xml_infos += "</carto>"
         functions_fichiers.ecrire_fichier(fichier_carto, xml_infos)
         print("la carto a ete generee dans le fichier %s" % fichier_carto)
+        functions_notifications.envoi_notification("cartographie_nmap",domaine)
 
 
 def extract_infos_from_nmap(file_nmap, filename):
