@@ -1,4 +1,4 @@
-carto by Ohmmm
+cartoz by Ohmmm
 
 
 réaliser une cartographie d'un domaine

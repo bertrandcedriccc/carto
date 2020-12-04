@@ -23,13 +23,13 @@ def Config_Section_Map(section):
 
 def parse_config():
 	global Config
-	Config = ConfigParser.ConfigParser()
+	Config = configparser.ConfigParser()
 	Config.read("conf/tools.conf")
 	Config.sections()
 
 
 def get_cfg_osint():
-	cfg_osint = ConfigParser.ConfigParser()
+	cfg_osint = configparser.ConfigParser()
 	cfg_osint.read("conf/osint.conf")
 	#Config.sections()
 	return cfg_osint

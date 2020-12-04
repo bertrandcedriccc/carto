@@ -59,6 +59,16 @@ if args.fichier_domaine is not None:
 
 if args.nmap or args.nmap is not None :
 	print("cartographie des domaines du projet" + domaine)
-	if fichier_domaine != "":
-		print ("scan des domaines du fichier " + fichier_domaine)
-		functions_scan_projet.scan_domaines(domaine,fichier_domaine)
+	if fichier_domaine != "" :
+		if os.path.exists(fichier_domaine):
+			print ("scan des domaines du fichier " + fichier_domaine)
+			functions_scan_projet.scan_domaines(domaine,fichier_domaine)
+		else:
+			print ("le fichier "+fichier_domaine + " nexiste pas")
+	else:
+		print ("pas de fichier domaine indique, on va faire une enumeration")
+
+
+if args.enum or args.enum is not None :
+	print("cartographie des domaines du projet" + domaine)
+	functions_scan_projet.scan_domaines(domaine,"")
