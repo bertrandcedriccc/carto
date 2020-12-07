@@ -1,0 +1,7 @@
+## 06-12-2020 - version 0.2
+- FEAT: lancement scan nmap fast (top ports common) si erreur scan all common
+- FEAT: envoi d'une notif quand fini
+
+## 23-11-2020 - version 0.1
+- FEAT: cartographie des domaines nmap
+- FEAT: enumeration des domaines

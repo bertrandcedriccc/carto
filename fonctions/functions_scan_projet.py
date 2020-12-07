@@ -54,4 +54,5 @@ def scan_domaines(domaine,fichier_domaine):
     if os.path.exists(fichier_domaine):
         dir_rapport = "audits/" + domaine + "/nmap/"
         functions_nmap.check_carto_nmap(domaine, fichier_domaine)
+        functions_nmap.check_nmap_fast(domaine, fichier_domaine)
     functions_carto.generate_carto(domaine, dir_rapport)

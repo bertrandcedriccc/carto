@@ -6,6 +6,7 @@ import os
 import xml
 from fonctions.audit.carto import functions_nmap
 from fonctions.config import functions_fichiers
+from fonctions.config import functions_notifications
 from xml.dom import minidom
 from xml.dom.minidom import parse
 

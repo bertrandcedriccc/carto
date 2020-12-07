@@ -298,6 +298,7 @@ def check_carto_nmap(domaine, file_domaine):
                 check_carto_nmap(domaine, file_domaine)
         else:
             print("tous les domaines sur " + domaine + " ont ete scannes")
+            print ("check si tous les ports ont ete detectes")
 
 
 def recup_domains_not_scanned(domaine, dir_rapport, file_domaine):
@@ -335,37 +336,48 @@ def recup_domains_not_scanned(domaine, dir_rapport, file_domaine):
     return domain_not_scanned, nb_domains_not_scanned
 
 
-def insert_nmap_dir_report(domaine, dir_rapport, liste_doms):
+def check_nmap_fast(domaine,file_domaine):
     """
     Args:
      domaine:
      dir_rapport:
      liste_doms:
     """
+    print ("check si necessite de nmap fast")
+    dir_rapport = f"audits/{domaine}/nmap/"
     cfg_pentest = functions_conf.get_cfg_pentest()
-    for i in range(0, len(liste_doms)):
-        sousdomaine = liste_doms[i]
-        print("sous-domaine analyse " + sousdomaine)
-        dir_nmap_file = dir_rapport + "/" + sousdomaine + "_nmap.xml"
-        if os.path.exists(dir_nmap_file):
-            lports = ""
-            print("Le rapport nmap existe bien : " + dir_nmap_file)
-            print("pas encore de scan custom sur " + sousdomaine)
-            ports = extract_ports(dir_nmap_file, sousdomaine)
-            print(str(ports))
-            if len(ports) == 0:
-                print("pas de ports detectes sur " + sousdomaine + "on va rescanner les ports common")
-                print("scan nmap fast sur le domaine " + sousdomaine)
-                cmd = cfg_pentest.get("NMAP_CMD_TCP_FAST", 'nmap_cmd_tcp_fast')
-                if os.path.exists(dir_nmap_file):
-                    os.remove(dir_nmap_file)
-                cmd = cmd.replace("<file_report>", dir_nmap_file)
-                cmd = cmd.replace("<ip>", sousdomaine)
-                cmd = cmd.replace('\"', '')
-                print(cmd)
-                os.system(cmd)
-        else:
-            print(sousdomaine + " deja scanne")
+    with open(file_domaine, 'r') as f:
+        for line in f:
+            sousdomaine = line.rstrip('\n\r')
+            print("sous-domaine analyse " + sousdomaine)
+            dir_nmap_file = dir_rapport + "/" + sousdomaine + "_nmap.xml"
+            dir_nmap_file_fast = dir_rapport + "/" + sousdomaine + "_nmap_fast.xml"
+            if os.path.exists(dir_nmap_file):
+                lports = ""
+                print("Le rapport nmap existe bien : " + dir_nmap_file)
+                ports = extract_ports(dir_nmap_file, sousdomaine)
+                print(str(ports))
+                if len(ports) == 0:
+                    if not os.path.exists(dir_nmap_file_fast):
+                        print("pas de ports detectes sur " + sousdomaine + "on va rescanner les ports common")
+                        print("scan nmap fast sur le domaine " + sousdomaine)
+                        cmd = cfg_pentest.get("NMAP_CMD_TCP_FAST", 'nmap_cmd_tcp_fast')
+                        #if os.path.exists(dir_nmap_file):
+                        #    os.remove(dir_nmap_file)
+                        cmd = cmd.replace("<file_report>", dir_nmap_file_fast)
+                        cmd = cmd.replace("<ip>", sousdomaine)
+                        cmd = cmd.replace('\"', '')
+                        print(cmd)
+                        os.system(cmd)
+                        if os.path.exists(dir_nmap_file):
+                            os.remove(dir_nmap_file)
+                            os.rename(dir_nmap_file_fast,dir_nmap_file)
+                    else:
+                        print ("scan fast deja fait sur "+sousdomaine)
+                else:
+                    print ("des ports ont bien ete detectes sur " + sousdomaine + ", inutile de re-scanner")
+            else:
+                print(sousdomaine + " deja scanne")
 
 
 def extract_ports(nmap_file, domain):
@@ -374,13 +386,17 @@ def extract_ports(nmap_file, domain):
      nmap_file:
      domain:
     """
+    ports_nmap = []
     try:
         doc = xml.dom.minidom.parse(nmap_file)
     except IOError:
         print("error: file " + str(nmap_file) + " doesn't exist\n")
+    except:
+        print ("erreur lors de lanalyse du fichier, on rescanne")
+        return ports_nmap
 
     ports = ""
-    ports_nmap = []
+    
     if os.path.exists(nmap_file):
         for host in doc.getElementsByTagName("host"):
             try:
