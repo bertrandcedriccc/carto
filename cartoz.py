@@ -20,6 +20,7 @@ parser.add_argument("-d", "--domaine", help="Domaine a analyser.", nargs='*')
 parser.add_argument("--fichier_domaine", "--fichier_domaine", help="Fichiers contenant les domaines a analyser.", nargs='*')
 parser.add_argument("--enum", "--enum", help="Enumerer les domaines", nargs='*')
 parser.add_argument("--nmap", "--nmap", help="Cartographie des domaines", nargs='*')
+parser.add_argument("--zap", "--zap", help="Audit ZAP des domaines", nargs='*')
 parser.add_argument("--scan_file_projet", "--scan_file_projet", help="Scan de fichier de projet via fichier texte", nargs='*')
 
 args = parser.parse_args()
@@ -60,13 +61,27 @@ if args.fichier_domaine is not None:
 if args.nmap or args.nmap is not None :
 	print("cartographie des domaines du projet" + domaine)
 	if fichier_domaine != "" :
-		if os.path.exists(fichier_domaine):
+		if os.path.isfile(fichier_domaine):
 			print ("scan des domaines du fichier " + fichier_domaine)
 			functions_scan_projet.scan_domaines(domaine,fichier_domaine)
 		else:
 			print ("le fichier "+fichier_domaine + " nexiste pas")
 	else:
 		print ("pas de fichier domaine indique, on va faire une enumeration")
+
+
+if args.zap or args.zap is not None :
+	print("audit zap des domaines du projet" + domaine)
+	if fichier_domaine != "" :
+		if os.path.isfile(fichier_domaine):
+			print ("scan des domaines du fichier " + fichier_domaine)
+			functions_scan_projet.scan_zap(domaine,fichier_domaine)
+		else:
+			print ("le fichier "+fichier_domaine + " nexiste pas")
+			exit()
+	else:
+		print ("pas de fichier domaine indique, annulation")
+		exit()
 
 
 if args.enum or args.enum is not None :

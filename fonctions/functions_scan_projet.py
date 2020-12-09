@@ -20,6 +20,7 @@ import functions_nmap_plugin
 from fonctions.audit.carto import functions_carto
 from fonctions.audit.carto import functions_domains_enum
 from fonctions.audit.carto import functions_nmap
+from fonctions.audit.carto import functions_zap
 
 def scan_projets(file_projet):
 	#date_audit = time.strftime("%m-%Y")
@@ -55,4 +56,20 @@ def scan_domaines(domaine,fichier_domaine):
         dir_rapport = "audits/" + domaine + "/nmap/"
         functions_nmap.check_carto_nmap(domaine, fichier_domaine)
         functions_nmap.check_nmap_fast(domaine, fichier_domaine)
+    functions_carto.generate_carto(domaine, dir_rapport)
+
+
+def scan_zap(domaine,fichier_domaine):
+    """
+    Args:
+     domaine:
+    """
+    print ("scan zap des domaines du projet "+domaine)
+    print("domaine analyse " + domaine)
+    
+    if os.path.exists(fichier_domaine):
+        dir_rapport = "audits/" + domaine + "/zap/"
+        functions_zap.check_carto_zap(domaine, fichier_domaine)
+    else:
+    	print ("le fichier domaine "+fichier_domaine + " nexiste pas")
     functions_carto.generate_carto(domaine, dir_rapport)

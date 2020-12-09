@@ -164,6 +164,7 @@ class Audit(Thread):
 
         if '0 IP addresses (0 hosts up) scanned' in open(self.output_dir + self.ip + "_nmap.xml").read():
             print("le domaine " + self.ip + " na pas ete resolu")
+            #break
         return "1:"
 
 
@@ -362,8 +363,6 @@ def check_nmap_fast(domaine,file_domaine):
                         print("pas de ports detectes sur " + sousdomaine + "on va rescanner les ports common")
                         print("scan nmap fast sur le domaine " + sousdomaine)
                         cmd = cfg_pentest.get("NMAP_CMD_TCP_FAST", 'nmap_cmd_tcp_fast')
-                        #if os.path.exists(dir_nmap_file):
-                        #    os.remove(dir_nmap_file)
                         cmd = cmd.replace("<file_report>", dir_nmap_file_fast)
                         cmd = cmd.replace("<ip>", sousdomaine)
                         cmd = cmd.replace('\"', '')

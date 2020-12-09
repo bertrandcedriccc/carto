@@ -17,8 +17,10 @@ def create_reports(domaine):
         os.mkdir("audits/" + domaine + "/enum")
     if not os.path.exists("audits/" + domaine + "/vulns"):
         os.mkdir("audits/" + domaine + "/vulns")
-
-
+    if not os.path.exists("audits/" + domaine + "/zap"):
+        os.mkdir("audits/" + domaine + "/zap")
+    if not os.path.exists("audits/" + domaine + "/zap"):
+        os.mkdir("audits/" + domaine + "/zap")
 
 def gen_nom_rapport(domaine, outil, ext):
     """
