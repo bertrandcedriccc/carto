@@ -13,7 +13,7 @@ from fonctions.config import functions_conf
 from fonctions.config import functions_fichiers
 from fonctions.config import functions_rapport
 from fonctions.config import functions_system
-
+from fonctions.config import functions_notifications
 
 def check_carto_zap(domaine,fichier_domaine):
     """
@@ -27,6 +27,10 @@ def check_carto_zap(domaine,fichier_domaine):
     dir_zap_tmp = os.getcwd() +"/"+ cfg_pentest.get("ZAP_DIR",'zap_dir')
     dir_zap_tmp = dir_zap_tmp.replace('"',"")
     print (dir_zap_tmp)
+    if not os.path.exists("/zap"):
+        os.mkdir("/zap")
+    if not os.path.exists("/zap/wrk"):
+        os.mkdir("/zap/wrk/")
     nb_tour = 0
     with open(fichier_domaine, 'r') as f:
         for line in f:
@@ -38,7 +42,8 @@ def check_carto_zap(domaine,fichier_domaine):
             if port == "443": url = "https://"+sousdomaine
             if port == "80": url = "http://"+sousdomaine
             print("scan zap sur " + str(sousdomaine) + " " + url)
-            nom_temp_rapport = dir_zap_tmp + "zap_"+sousdomaine+".xml"
+            nom_temp_rapport2 = dir_zap_tmp + "zap_"+sousdomaine+".xml"
+            nom_temp_rapport = "zap_"+sousdomaine+".xml"
             nom_rapport = dir_zap + "zap_"+sousdomaine+".xml"
             if not os.path.exists(nom_rapport) : 
                 cmd = cfg_pentest.get("ZAP_CMD",'zap_cmd')
@@ -47,17 +52,16 @@ def check_carto_zap(domaine,fichier_domaine):
                 cmd = cmd.replace('\"',"")
                 print(nom_rapport)
                 print(cmd)
-                if nb_tour == 1:
-                    os.system(cmd)
-                else:functions_system.lancer_cmd_with_timeout(cmd, 8000)
-                if os.path.exists(nom_temp_rapport):
-                    print (nom_temp_rapport + " existe bien")
-                    os.system("cp "+nom_temp_rapport +" " +nom_rapport)
-                    print ("deplacement : cp "+nom_temp_rapport +" " +nom_rapport)
-                    os.system("cp "+nom_temp_rapport+".html" +" " +nom_rapport+".html")
+                functions_system.lancer_cmd_with_timeout(cmd, 4000)
+                if os.path.exists(nom_temp_rapport2):
+                    print (nom_temp_rapport2 + " existe bien")
+                    os.system("cp "+nom_temp_rapport2 +" " +nom_rapport)
+                    print ("deplacement : cp "+nom_temp_rapport2 +" " +nom_rapport)
+                    os.system("cp "+nom_temp_rapport2+".html" +" " +nom_rapport+".html")
                 else:
                     print (nom_temp_rapport + " existe pas")
             else:
                 print ("le scan zap a deja ete effectue sur " + sousdomaine)
+    functions_notifications.envoi_notification("zap",domaine)
 
 

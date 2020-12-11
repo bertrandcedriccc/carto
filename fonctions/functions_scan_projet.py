@@ -72,4 +72,3 @@ def scan_zap(domaine,fichier_domaine):
         functions_zap.check_carto_zap(domaine, fichier_domaine)
     else:
     	print ("le fichier domaine "+fichier_domaine + " nexiste pas")
-    functions_carto.generate_carto(domaine, dir_rapport)
